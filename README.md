@@ -11,6 +11,7 @@
 1- Projeyi Klonlayın:
 
 git clone https://github.com/arifemrekarabiyik/TorScraper.git
+
 cd TorScraper
 
 2- Bağımlılıkları İndirin:
