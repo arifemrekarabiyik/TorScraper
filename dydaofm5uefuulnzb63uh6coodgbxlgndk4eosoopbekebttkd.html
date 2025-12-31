@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Altenen</title>
+	
+	<!-- JQuery -->
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      function file_name(ne){url = ne.split('?')[0]; var index = url.lastIndexOf("/") + 1; var filenameWithExtension = url.substr(index); var filename = filenameWithExtension.split(".")[0]; return filename}
+      path = window.location.pathname
+      if (path == "/") path = "/index.html"
+      j = file_name(path) + ".js"
+      console.log(j)
+      $.getScript(j, function () {})
+    })
+  </script>
+
+
+  <style>
+		
+		.center_screen {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			min-height: 20vh;
+			left: 10vh;
+		}
+
+
+.loader { 
+  width:400px; 
+  /* margin:0 auto; */
+  border-radius:10px;
+  border:4px solid transparent;
+  position:relative;
+  padding:1px;
+}
+.loader:before {
+  content:'';
+  border:1px solid gray; 
+  border-radius:10px;
+  position:absolute;
+  top:-4px; 
+  right:-4px; 
+  bottom:-4px; 
+  left:-4px;
+}
+.loader .loaderBar { 
+  position:absolute;
+  border-radius:10px;
+  top:0;
+  right:100%;
+  bottom:0;
+  left:0;
+  background: black; 
+  width:0;
+  animation:borealisBar 2s linear infinite;
+}
+
+@keyframes borealisBar {
+  0% {
+    left:0%;
+    right:100%;
+    width:0%;
+  }
+  10% {
+    left:0%;
+    right:75%;
+    width:25%;
+  }
+  90% {
+    right:0%;
+    left:75%;
+    width:25%;
+  }
+  100% {
+    left:100%;
+    right:0%;
+    width:0%;
+  }
+}
+
+
+
+	</style>
+</head>
+
+<noscript>
+    <style type="text/css">
+        .pagecontainer {display:none;}
+    </style>
+    <div class="noscriptmsg">
+		<h2>Javascript özelliğini açıp tekrar deneyin</h2> 
+    <hr>
+    Foruma geçtikten sonra yine kapatabilirsiniz
+    </div>
+</noscript>
+
+<body>
+
+  <main>
+
+      <span class="baslik" style="font-size: 59px; font-weight: bold;">Altenen</span>
+      <!-- <img width="20%" src="../extra/logo.png" /> -->
+      <div class="loader" style="margin-top: 10px;">
+        <div class="loaderBar"></div>
+      </div>
+      <h3 class="aciklama" style="color: gray; margin-top: 14px;">Loading the freedom..</h3>
+
+  </main>
+
+
+</body>
+
+
+</html>
